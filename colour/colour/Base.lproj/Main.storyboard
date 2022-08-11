@@ -17,54 +17,56 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="O0j-vN-aX1" kind="relationship" relationship="rootViewController" id="lec-9w-4Nr"/>
+                        <segue destination="3TX-SW-1Rb" kind="relationship" relationship="rootViewController" id="hsg-e9-aEf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fy4-1o-6eK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18" y="208"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="TG7-du-WZ6">
+        <!--FirstVC-->
+        <scene sceneID="taq-YP-391">
             <objects>
-                <viewController id="O0j-vN-aX1" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="brZ-7i-55q">
+                <viewController storyboardIdentifier="FirstVC" id="3TX-SW-1Rb" customClass="FirstVC" customModule="colour" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dyo-gx-RhX" userLabel="Super View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGM-A6-xqo">
-                                <rect key="frame" x="297" y="106" width="97" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7N-PB-23j">
+                                <rect key="frame" x="289" y="103" width="67" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Change BG"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <segue destination="T3B-ad-hp2" kind="show" id="k2S-w0-Ymw"/>
+                                    <action selector="changeAct:" destination="3TX-SW-1Rb" eventType="touchUpInside" id="yYE-eY-hDO"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="kpt-Y4-88b"/>
-                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                        <viewLayoutGuide key="safeArea" id="CWr-Er-m0I"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="DGM-A6-xqo" secondAttribute="trailing" id="93r-uB-PY5"/>
-                            <constraint firstItem="DGM-A6-xqo" firstAttribute="top" secondItem="brZ-7i-55q" secondAttribute="topMargin" constant="18" id="f2B-AW-ZTz"/>
-                            <constraint firstItem="DGM-A6-xqo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kpt-Y4-88b" secondAttribute="leading" symbolic="YES" id="wl2-js-ipE"/>
+                            <constraint firstItem="d7N-PB-23j" firstAttribute="top" secondItem="CWr-Er-m0I" secondAttribute="top" constant="15" id="Ki7-gY-7Ao"/>
+                            <constraint firstItem="d7N-PB-23j" firstAttribute="leading" secondItem="CWr-Er-m0I" secondAttribute="leading" constant="289" id="rbO-aM-IIe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="LVA-FM-Lea"/>
+                    <navigationItem key="navigationItem" id="FRR-rF-rW7"/>
+                    <connections>
+                        <outlet property="superView" destination="dyo-gx-RhX" id="Jx5-vl-PwX"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QiG-0n-rjs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5pc-74-JBy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850.72463768115949" y="207.58928571428569"/>
+            <point key="canvasLocation" x="795.6521739130435" y="223.66071428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--ColourVC-->
         <scene sceneID="jZy-IJ-HIC">
             <objects>
-                <viewController id="T3B-ad-hp2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColourVC" id="T3B-ad-hp2" customClass="ColourVC" customModule="colour" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WFW-3R-N0g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Dbe-QC-itQ">
-                                <rect key="frame" x="20" y="147" width="374" height="433"/>
+                                <rect key="frame" x="20" y="103" width="374" height="433"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLz-zI-LUG">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="433"/>
@@ -81,6 +83,9 @@
                                                                     <constraint firstAttribute="width" constant="190" id="qOW-sO-Asu"/>
                                                                 </constraints>
                                                                 <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
+                                                                <connections>
+                                                                    <action selector="sumSlAction:" destination="T3B-ad-hp2" eventType="valueChanged" id="2n4-8E-P7O"/>
+                                                                </connections>
                                                             </slider>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nsY-LK-ds9">
                                                                 <rect key="frame" x="255" y="0.0" width="95" height="34"/>
@@ -89,6 +94,9 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="redTFAct:" destination="T3B-ad-hp2" eventType="editingDidEnd" id="gQx-MO-UVD"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -101,6 +109,9 @@
                                                                     <constraint firstAttribute="width" constant="190" id="3lD-nL-m6J"/>
                                                                 </constraints>
                                                                 <color key="minimumTrackTintColor" red="0.54677399019999995" green="0.96611279250000004" blue="0.42863538359999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <connections>
+                                                                    <action selector="sumSlAction:" destination="T3B-ad-hp2" eventType="valueChanged" id="tUe-f7-6qU"/>
+                                                                </connections>
                                                             </slider>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kOV-Db-AvI">
                                                                 <rect key="frame" x="255" y="0.0" width="95" height="34"/>
@@ -109,6 +120,9 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="greenTFAct:" destination="T3B-ad-hp2" eventType="editingDidEnd" id="QuY-BQ-ttE"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -120,6 +134,9 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="190" id="QMQ-AK-R1O"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <action selector="sumSlAction:" destination="T3B-ad-hp2" eventType="valueChanged" id="Rww-A3-o38"/>
+                                                                </connections>
                                                             </slider>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gzp-kA-nqR">
                                                                 <rect key="frame" x="255" y="0.0" width="95" height="34"/>
@@ -128,6 +145,9 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="blueTFAct:" destination="T3B-ad-hp2" eventType="editingDidEnd" id="cQZ-eN-cuc"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -158,6 +178,9 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="190" id="22B-9N-Uch"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <action selector="opacitySLAct:" destination="T3B-ad-hp2" eventType="valueChanged" id="0ap-gH-nRo"/>
+                                                                </connections>
                                                             </slider>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocJ-N0-1bq">
                                                                 <rect key="frame" x="255" y="0.0" width="95" height="34"/>
@@ -166,6 +189,9 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="opacityTFAct:" destination="T3B-ad-hp2" eventType="editingDidEnd" id="0IS-ig-eev"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -183,13 +209,16 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdC-EF-xqj">
-                                <rect key="frame" x="20" y="649" width="374" height="66"/>
+                                <rect key="frame" x="20" y="605" width="374" height="110"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1s-U7-ZRv">
-                                <rect key="frame" x="134" y="820" width="147" height="27"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1s-U7-ZRv">
+                                <rect key="frame" x="134" y="776" width="147" height="71"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="DoneAct:" destination="T3B-ad-hp2" eventType="touchUpInside" id="sTJ-oI-ZNE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="87b-jv-zpM"/>
@@ -209,6 +238,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="foF-Wr-4Hw"/>
+                    <connections>
+                        <outlet property="blueSl" destination="rXZ-jW-Bdd" id="sF5-cD-Ujj"/>
+                        <outlet property="blueTF" destination="gzp-kA-nqR" id="ZAw-N2-KgR"/>
+                        <outlet property="greenSL" destination="445-72-YEM" id="eeD-Dt-jOX"/>
+                        <outlet property="greenTF" destination="kOV-Db-AvI" id="zTP-sy-Gav"/>
+                        <outlet property="opacitySl" destination="wuU-ZJ-TFo" id="7Yt-PN-FWx"/>
+                        <outlet property="opacityTF" destination="ocJ-N0-1bq" id="qB2-k8-jKi"/>
+                        <outlet property="redSl" destination="P5I-2O-Jjv" id="bHQ-9q-ojT"/>
+                        <outlet property="redTF" destination="nsY-LK-ds9" id="69J-Wa-6gd"/>
+                        <outlet property="viewColor" destination="vdC-EF-xqj" id="e7h-av-oBl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UNT-Td-qMb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,9 +261,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
